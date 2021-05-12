@@ -6,6 +6,8 @@ namespace FizzBuzzTests
 {
     public class FizzBuzzTests
     {
+        NumberCheckingService _numberCheckingService = new FizzBuzz.NumberCheckingService();
+
         [Theory]
         [InlineData(3)]
         [InlineData(6)]
@@ -17,7 +19,7 @@ namespace FizzBuzzTests
         {
             string expected = "Fizz";
 
-            var actual = "";
+            var actual = _numberCheckingService.CheckFizzBuzz(value);
 
             Assert.Equal(expected, actual);
         }
@@ -33,7 +35,7 @@ namespace FizzBuzzTests
         {
             string expected = "Buzz";
 
-            var actual = "";
+            var actual = _numberCheckingService.CheckFizzBuzz(value);
 
             Assert.Equal(expected, actual);
         }
@@ -49,7 +51,7 @@ namespace FizzBuzzTests
         {
             string expected = "FizzBuzz";
 
-            var actual = "";
+            var actual = _numberCheckingService.CheckFizzBuzz(value);
 
             Assert.Equal(expected, actual);
         }
@@ -58,17 +60,18 @@ namespace FizzBuzzTests
         [InlineData(1)]
         [InlineData(2)]
         [InlineData(4)]
-        [InlineData(6)]
         [InlineData(7)]
+        [InlineData(8)]
         [InlineData(11)]
         [InlineData(13)]
         [InlineData(17)]
         [InlineData(19)]
+        [InlineData(22)]
         public void PrintNumber(int value)
         {
             string expected = value.ToString();
 
-            var actual = "";
+            var actual = _numberCheckingService.CheckFizzBuzz(value);
 
             Assert.Equal(expected, actual);
         }
