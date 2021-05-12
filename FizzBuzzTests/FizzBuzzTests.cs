@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using FizzBuzz;
 
 namespace FizzBuzzTests
 {
@@ -47,6 +48,25 @@ namespace FizzBuzzTests
         public void PrintFizzBuzz(int value)
         {
             string expected = "FizzBuzz";
+
+            var actual = "";
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(4)]
+        [InlineData(6)]
+        [InlineData(7)]
+        [InlineData(11)]
+        [InlineData(13)]
+        [InlineData(17)]
+        [InlineData(19)]
+        public void PrintNumber(int value)
+        {
+            string expected = value.ToString();
 
             var actual = "";
 
